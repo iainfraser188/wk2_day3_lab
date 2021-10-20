@@ -21,5 +21,14 @@ class TestCustomerDetails(unittest.TestCase):
     def test_update_wallet_total(self):
         self.customer.update_wallet_total(self.drink.price)
         self.assertEqual(45, self.customer.wallet)
+    
+    def test_drunkeness_level_sober(self):
+        self.customer.drunkeness_level(self.drink.alcohol_level)
+        self.assertEqual(2, self.customer.drunkeness)
         
+    def test_drunkeness_level_over_the_level(self):
+        self.customer.drunkeness_level(self.drink.alcohol_level)
+        self.customer.drunkeness_level(self.drink.alcohol_level)
+        self.customer.drunkeness_level(self.drink.alcohol_level)
+        self.assertEqual(6, self.customer.drunkeness)
     
