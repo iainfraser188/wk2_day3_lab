@@ -4,8 +4,8 @@ from src.drink import Drink
 
 class TestCustomerDetails(unittest.TestCase):
     def setUp(self):
-        self.customer = CustomerDetails("Iain", 50)
-        self.drink = Drink("vodka", 5)
+        self.customer = CustomerDetails("Iain", 50, 25, 0)
+        self.drink = Drink("vodka", 5, 2)
 
 
     def test_customer_has_name(self):
@@ -21,3 +21,5 @@ class TestCustomerDetails(unittest.TestCase):
     def test_update_wallet_total(self):
         self.customer.update_wallet_total(self.drink.price)
         self.assertEqual(45, self.customer.wallet)
+        
+    

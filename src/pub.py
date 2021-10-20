@@ -12,3 +12,9 @@ class Pub:
         
     def update_till_total(self, drink_price):
         self.till = self.till + drink_price
+        
+    def check_age(self, age):
+        if age >= 18:
+            return True
+
+        

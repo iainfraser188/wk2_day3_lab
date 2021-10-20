@@ -7,7 +7,8 @@ from src.drink import Drink
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("The Prancing Pony", 1000)
-        self.drink = Drink("vodka", 5)
+        self.drink = Drink("vodka", 5, 2)
+        self.customer = CustomerDetails("Iain", 50, 25, 0)
     
     def test_pub_has_name(self):
         self.assertEqual("The Prancing Pony", self.pub.name)
@@ -28,14 +29,7 @@ class TestPub(unittest.TestCase):
         self.pub.update_till_total(self.drink.price)
         self.assertEqual(1005, self.pub.till)
         
+    def test_check_age(self):
+        self.assertEqual(True, self.pub.check_age(self.customer.age))
     
     
-    
-    
-    # def sell_pet_to_customer(pet_shop, pet, customer):
-    # if pet != None and customer_can_afford_pet(customer, pet):
-    #     remove_pet_by_name(pet_shop, pet["name"])
-    #     add_pet_to_customer(customer, pet)
-    #     remove_customer_cash(customer, pet["price"])
-    #     add_or_remove_cash(pet_shop, pet["price"])
-    #     increase_pets_sold(pet_shop, 1)

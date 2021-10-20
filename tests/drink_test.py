@@ -3,7 +3,7 @@ from src.drink import Drink
 
 class TestDrinks(unittest.TestCase):
     def setUp(self):
-        self.drink = Drink("vodka", 5)
+        self.drink = Drink("vodka", 5, 2)
         
 
     def test_what_to_drink(self):
