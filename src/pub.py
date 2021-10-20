@@ -10,3 +10,5 @@ class Pub:
     def remove_from_drinks_list(self, drink_name_remove):
         return self.drinks.remove(drink_name_remove)
         
+    def update_till_total(self, drink_price):
+        self.till = self.till + drink_price

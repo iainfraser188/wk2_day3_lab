@@ -7,6 +7,7 @@ from src.drink import Drink
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("The Prancing Pony", 1000)
+        self.drink = Drink("vodka", 5)
     
     def test_pub_has_name(self):
         self.assertEqual("The Prancing Pony", self.pub.name)
@@ -22,6 +23,10 @@ class TestPub(unittest.TestCase):
         self.pub.add_to_drinks_list("vodka")
         self.pub.remove_from_drinks_list("vodka")
         self.assertEqual(0, len(self.pub.drinks))
+        
+    def test_update_till_total(self):
+        self.pub.update_till_total(self.drink.price)
+        self.assertEqual(1005, self.pub.till)
         
     
     
