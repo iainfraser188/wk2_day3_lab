@@ -12,3 +12,7 @@ class CustomerDetails:
     def update_wallet_total(self, drink_price):
         self.wallet = self.wallet - drink_price
         
+    def drunkeness_level(self, alcohol_level):
+        self.drunkeness = self.drunkeness + alcohol_level
+
+        

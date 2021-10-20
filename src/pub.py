@@ -16,5 +16,11 @@ class Pub:
     def check_age(self, age):
         if age >= 18:
             return True
+        
+    def customer_drunkeness(self, drunkeness):
+        if drunkeness <= 5:
+            print("Enjoy your drink")
+        else:
+            print("Sorry, you've had enough!")
 
         
